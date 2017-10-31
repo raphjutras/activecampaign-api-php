@@ -33,9 +33,9 @@ class AC_Contact extends ActiveCampaign {
 		return $response;
 	}
 
-	function delete($params) {
+	function delete($params, $post_data) {
 		$request_url = "{$this->url}&api_action=contact_delete&api_output={$this->output}&{$params}";
-		$response = $this->curl($request_url);
+		$response = $this->curl($request_url, $post_data);
 		return $response;
 	}
 
